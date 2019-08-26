@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function(e) {
 
             function filt(element) {
                 var reservada = [];
-                reservada = ["luz", "preto", "preta", "vermelho", "vermelha", "amarelo", "amarela", "azul", "paleta"];
+                reservada = ["apagar", "escrever", "preto", "preta", "vermelho", "vermelha", "amarelo", "amarela", "azul", "paleta"];
                 var qtde = reservada.length;
                 var elemento = element.toLowerCase();
                 for (let i = 0; i < qtde; i++) {
@@ -95,9 +95,8 @@ window.addEventListener('DOMContentLoaded', function(e) {
             //switch para definir
             console.log(res);
             switch (res.toLowerCase()) {
-                case 'luz':
-                    console.log("Foi inte ate aki!");
-                    speak('Foi inte ate aki!');
+                case 'escrever':
+                    $("#keyboard")[0].click();
                     break;
 
                 case 'preto':
@@ -118,16 +117,18 @@ window.addEventListener('DOMContentLoaded', function(e) {
 
                     break;
                 case 'paleta':
-
+                    console.log('OLHA AQUI');
+                    $(".cl-input")[0].click();
                     break;
 
                 case 'preta':
                     color('#000000', 'preto');
                     break;
-                    /*
-                case value:
 
+                case 'apagar':
+                    $("#delete")[0].click();
                     break;
+                    /*
                 case value:
 
                     break;
