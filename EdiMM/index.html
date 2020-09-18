@@ -45,10 +45,19 @@
     <script type="text/javascript" src="js/jquerymodal.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/speechrecognation.js"></script>
-    <!-- <script type="text/javascript" src="js/speak.js"></script>-->
 
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+    <script>
+        //funcao utilizar botao direito mouseacionar microfone
+        $('*').on("contextmenu", function(e) { //Botão direito é pressionado
+                $("#speakBtn")[0].click();
+
+                return false;
+            })
+            //fim funcao botao direito
+    </script>
 </head>
 
 <body onload="init()">
@@ -123,12 +132,10 @@
                                 <fieldset class="scheduler-border" id="paletaCores">
                                     <legend class="scheduler-border"></legend>
                                     <li id="colorSelect">
-                                        <a title="Paleta de Cores " class="buttonToolbar a-color-picker">
-                                            <input type="color" onchange="setColor(this.value);" class="color-picker">
+                                        <a title="Paleta de Cores" class="button-color-picker buttonToolbar a-color-picker">
+                                            <input type="color" id="btCorBorda" onchange="setColor(this.value);" class="cl-input color-picker">
                                         </a>
-                                        <!--mudei essa linha abaixo acrescentando-a 
-                                        <input type="hidden" onChange="setColor('ff0000');">
-                                        -->
+
                                     </li>
                                 </fieldset>
                             </li>

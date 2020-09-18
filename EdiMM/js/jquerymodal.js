@@ -3273,7 +3273,6 @@ function setWidth(val) { // Function responsible for initializing element width
 
 function setColor(val) { // Function responsible for managing borders and background
     colorBootElement = val; // Get color
-
     verificaCheckBordas(); // Call function verificaCheckBordas
     verificaCheckFundo(); // Call function verificaCheckFundo
 }
@@ -3291,6 +3290,9 @@ function verificaCheckBordas() { // Function responsible for coloring the edges 
     for (var i = 0; i < bordas.length; i++) {
         if (bordas[i].checked == true) { // If checkbox is selected
             colorBoot = colorBootElement; // Get color
+            var btCorBorda = document.getElementById("btCorBorda");
+            btCorBorda.value = colorBoot;
+
         }
         if (bordas[i].checked == false) { // if checkbox is not selected
 
